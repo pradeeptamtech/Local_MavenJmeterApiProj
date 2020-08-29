@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Compile stage') {
             steps {
-                bat "mvn clean compile" 
+                bat "mvn clean" 
         }
     }
 
@@ -17,10 +17,10 @@ pipeline {
         }
     }
 
-          stage('deployment stage') {
-              steps {
-                bat "mvn deploy"
-        }
+         // stage('deployment stage') {
+         //     steps {
+         //       bat "mvn deploy"
+       // }
     }
 
   }
