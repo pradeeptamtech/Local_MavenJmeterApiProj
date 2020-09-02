@@ -28,7 +28,7 @@ pipeline {
                     emailext( to:'pradeepta.panigrahi@hp.com' ,
                               replyTo:'pradeeptamtech@gmail.com',
                               subject: "Email Report from- '${env.JOB_NAME}'",
-                              body: readFile("target/reports/"),
+                              //body: readFile("target/reports/"),
                               mimeType: 'text/html' );
                 }
          }    
