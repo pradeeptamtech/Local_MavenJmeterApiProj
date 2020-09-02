@@ -23,13 +23,13 @@ pipeline {
        // }
     //}
         
-        stage("Email"){
+        stage("Email") {
             steps{
-                    emailext(to: 'pradeepta.panigrahi@hp.com' ,
+                    emailext( to: 'pradeepta.panigrahi@hp.com' ,
                          replyTo: 'pradeeptamtech@gmail.com',
                          subject: "Email Report from- '${env.JOB_NAME}'",
-                         body: readFile("target/reports/ApiSealsPrinterRequest_"
-                    );
+                         body: readFile("target/reports/ApiSealsPrinterRequest_"),
+                         mimeType: 'text/html' );
                 }
          }    
         
