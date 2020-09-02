@@ -22,6 +22,14 @@ pipeline {
         //        bat "mvn deploy"
        // }
     //}
+        
+        post {
+              always {
+                       mail to: 'pradeepta.panigrahi@hp.com',
+                       subject: "Status of pipeline: ${currentBuild.fullDisplayName}",
+                       body: "${env.BUILD_URL} has result ${currentBuild.result}"
+                     }
+               }
 
   }
 
