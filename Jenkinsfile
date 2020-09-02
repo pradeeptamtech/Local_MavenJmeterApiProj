@@ -47,11 +47,13 @@ pipeline {
       //               }
        //        }
 
-         post {
+        stage("Email") {
+            steps{
             success {  
                 emailext body: 'Check console output at $BUILD_URL to view the results.', 
                         to: "${EMAIL_INFORM}", 
                         subject: 'Jenkins - Released $PROJECT_NAME - #$BUILD_NUMBER'
+            }
             }
          }
   }
